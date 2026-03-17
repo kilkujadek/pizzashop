@@ -24,4 +24,4 @@ INSERT INTO items (name, price) VALUES
     ('BBQ Kurczak', 29.00),
     ('Owoce Morza', 35.00),
     ('Kalzone', 24.00),
-    ('Mucha na dziko', 24.00);
+    ('Mucha na dziko', 100.00);
