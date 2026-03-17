@@ -1,0 +1,171 @@
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--p-surface-0);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--p-surface-0);
+  color: var(--p-text-color);
+}
+
+html.dark .app-shell {
+  background: #1e1e1e;
+  color: #e5e5e5;
+}
+
+.app-header {
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.waiting-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--p-surface-100);
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+html.dark .waiting-badge {
+  background-color: #2d2d2d;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 1rem 0;
+}
+
+.menu-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menu-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pizza-select {
+  flex: 1;
+}
+
+.selected-price {
+  font-weight: bold;
+  color: #22c55e;
+  min-width: 60px;
+}
+
+.cart-section {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--p-surface-300);
+}
+
+html.dark .cart-section {
+  border-top-color: #444;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  background-color: var(--p-surface-100);
+}
+
+html.dark .cart-item {
+  background-color: #2d2d2d;
+}
+
+.cart-name {
+  flex: 1;
+}
+
+.cart-qty {
+  margin: 0 15px;
+  color: #888;
+}
+
+.cart-total {
+  font-weight: bold;
+}
+
+.cart-summary {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid var(--p-surface-300);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+html.dark .cart-summary {
+  border-top-color: #444;
+}
+
+.order-btn {
+  margin-left: auto;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.pizza-option {
+  flex: 1;
+}
+
+.pizza-select .p-select-label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pizza-option-price,
+.p-select-label .pizza-option-price {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.waiting-time {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: var(--p-surface-100);
+  border-radius: 8px;
+}
+
+html.dark .waiting-time {
+  background-color: #2d2d2d;
+}

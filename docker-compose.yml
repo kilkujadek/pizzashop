@@ -1,0 +1,58 @@
+services:
+  pizza-backend:
+    image: php:8.2-cli
+    container_name: pizza-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./.data/pizza/backend:/var/www/html
+    working_dir: /var/www/html
+    command: >
+      sh -c "
+      apt-get update && apt-get install -y curl zip unzip libzip-dev &&
+      docker-php-ext-install pdo pdo_mysql zip &&
+      chmod +x /var/www/html/start.sh &&
+      /var/www/html/start.sh
+      "
+    networks:
+      - pizza-net
+    environment:
+      - DB_HOST=pizza-db
+      - DB_USER=root
+      - DB_PASSWORD=root_pass
+      - DB_NAME=pizza_db
+
+  pizza-frontend:
+    image: node:20-alpine
+    container_name: pizza-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./.data/pizza/frontend:/app
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host"
+    networks:
+      - pizza-net
+    depends_on:
+      - pizza-backend
+
+  pizza-db:
+    image: mariadb:10.11
+    container_name: pizza-db
+    restart: always
+    volumes:
+      - ./.data/pizza/db:/var/lib/mysql
+      - ./.data/pizza/db/init:/docker-entrypoint-initdb.d
+    networks:
+      - pizza-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_pass
+      - MYSQL_DATABASE=pizza_db
+      - MYSQL_USER=pizza_user
+      - MYSQL_PASSWORD=pizza_pass
+
+networks:
+  pizza-net:
+    driver: bridge

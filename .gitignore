@@ -1,0 +1,36 @@
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDEs
+.vscode/
+.idea/
+.claude/
+*.sublime-project
+*.sublime-workspace
+*.qodo
+
+# Logs
+*.log
+.data/pizza/backend/delays.log
+app.md
+
+# PHP (Backend)
+.data/pizza/backend/vendor/
+.data/pizza/backend/composer.phar
+
+# Node (Frontend)
+.data/pizza/frontend/node_modules/
+.data/pizza/frontend/dist/
+.data/pizza/frontend/.eslintcache
+
+# Docker & Database Data
+# Ignorujemy całą bazę danych, ale zostawiamy folder init, żeby można było łatwo zainicjalizować bazę przy pierwszym uruchomieniu projektu.
+.data/pizza/db/*
+!.data/pizza/db/init/
+
+# Environment
+# Normalnie te pliki powinny być ignorowane, ale do prostego zadania mozemy je zostawić, żeby łatwiej było uruchomić projekt bez dodatkowej konfiguracji.
+# .env
+# .env.local
